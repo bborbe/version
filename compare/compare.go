@@ -39,14 +39,17 @@ func Main(compare Compare) {
 }
 
 func do(writer io.Writer, compare Compare, versions []string) (int, error) {
-	logger.Debug("start")
 	if len(versions) != 2 {
+		logger.Debugf("arg count: %d", len(versions))
 		fmt.Fprintf(writer, "can only compare to versions\n")
+		logger.Debugf("arg count != 2 => failure")
 		return FAILURE, nil
 	}
 	if compare(version.Version(versions[0]), version.Version(versions[1])) {
+		logger.Debugf("%v %v => succes", versions[0], versions[1])
 		return SUCCESS, nil
 	} else {
+		logger.Debugf("%v %v => failure", versions[0], versions[1])
 		return FAILURE, nil
 	}
 }
