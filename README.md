@@ -14,7 +14,7 @@
        
 ## Continuous integration
 
-[Jenkins](https://www.benjamin-borbe.de/jenkins/job/Go-Version/)
+[Jenkins](https://jenkins.benjamin-borbe.de/job/Go-Version/)
 
 ## Copyright and license
 
